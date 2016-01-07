@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>PhoneGap Example</name>
+    <name>Passbox</name>
 
     <description>
-        An example for phonegap build docs. 
+       Safe your password box 
     </description>
 
     <author href="http://portofolio.charalampos-papaioannou.worcestercomputing.com/" 
