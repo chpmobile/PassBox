@@ -1,7 +1,9 @@
 
 #header {
- margin-bottom: 40px; 
+ bottom: 40px; 
  margin-top: 15px; 
+ height: 100px;
+ background-color: #f53f3f;
 }
 
 
