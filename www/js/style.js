@@ -1,19 +1,41 @@
-(function() {
+$(document).ready(function(){
+choosecolour();
+var $colour = $('.header').css('background').val();
 
-  "use strict";
+});
 
-  var toggles = document.querySelectorAll(".c-hamburger");
 
-  for (var i = toggles.length - 1; i >= 0; i--) {
-    var toggle = toggles[i];
-    toggleHandler(toggle);
-  };
 
-  function toggleHandler(toggle) {
-    toggle.addEventListener( "click", function(e) {
-      e.preventDefault();
-      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    });
-  }
+function choosecolour(){
 
-})();
+$('.red').click(function(){
+
+    $('.header').css('background','#ff0000');
+
+});
+
+$('.green').click(function(){
+
+    $('.header').css('background','#008000');
+
+});
+
+$('.blue').click(function(){
+
+    $('.header').css('background','#3B88DE');
+
+});
+
+$('.white').click(function(){
+
+    $('.header').css('background','#ffffff');
+
+});
+
+$('.yellow').click(function(){
+
+    $('.header').css('background','#ffd700');
+
+});
+
+}
