@@ -20,7 +20,10 @@
 
 <body>
 
-	<div data-role="page" id ="page" data-theme="a">
+
+<!--- Page 1 start here -->
+
+<div data-role="page" id ="page" data-theme="a">
 	 
 	
 		<div data-role="header" data-position="inline" data-theme="a">
@@ -55,6 +58,7 @@
 		</div>
 
 
+
 		<div data-role="main" class="ui-content" data-theme="a">
 
 		<div data-role="content" class="ui-content">
@@ -66,7 +70,7 @@
 			 <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Plus Icon</a>
 
 			 <!-- Eye button -->
-			 <a href="registration.html" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-notext">Eye Icon</a>
+			 <a href="#page2" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-notext">Eye Icon</a>
 
 			 <!-- back button -->
 			 <a href="#" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
@@ -85,9 +89,50 @@
 			</fieldset> -->
 		</div>
 	</div>
-	</div>
 
+</div>
+<!--- Page 1 ends here -->
 	
+
+/
+/
+/				<!---PAGE 1 ENDS-->
+//
+//
+
+
+
+<!--- Page 2 start here -->
+
+<div data-role="page" id ="page2" data-theme="a">
+
+<div class="container" data-theme="a">
+<div class="main">
+
+<form class="form" method="post" action="#">
+<h2>Registration</h2>
+
+<label>Username :</label>
+<input type="text" name="username" id="username" placeholder="haris">
+<label>Email :</label>
+<input type="text" name="email" id="email">
+<label>Password Generator :</label>
+<input type="password" name="password" id="password">
+<input type="button" name="Generator" id="generator" value="Password Generator">
+<br>
+<br>
+<label>Confirm Password :</label>
+<input type="password" name="cpassword" id="cpassword">
+<label>Web Site URL:</label>
+<input type="text" name>
+<input type="button" name="register" id="register" value="Register">
+</form>
+</div>
+</div>
+</div>
+
+<!--- Page 2 end here -->
+
 
 </body>
 </html>
