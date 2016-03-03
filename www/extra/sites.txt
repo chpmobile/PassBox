@@ -4,3 +4,12 @@ http://www.formget.com/jquery-registration-form/
 
 ///ALSO CHECK \\\\\
 http://www.sitepoint.com/10-jquery-signup-form-demos/
+
+
+///jquery panel\\\\\
+http://demos.jquerymobile.com/1.4.5/panel-external/
+http://demos.jquerymobile.com/1.4.5/panel-external/page-b.html
+
+
+////JQUERY DOWNLOADS\\\\\
+http://jquerymobile.com/download/
