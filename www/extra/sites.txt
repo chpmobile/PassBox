@@ -1,0 +1,6 @@
+/////Registration\\\\
+http://www.formget.com/jquery-registration-form/
+
+
+///ALSO CHECK \\\\\
+http://www.sitepoint.com/10-jquery-signup-form-demos/
