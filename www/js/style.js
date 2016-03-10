@@ -2,30 +2,21 @@
 $(document).ready(function(){
 	choosecolour();
 
-	//var $colour = $('.header').css('background').val();
-
-	$("p").append("Some appended text."); 
-
-	var name = "Facebbok";
+	var $colour = $('.header').css('background').val();
+$("p").append("Some appended text."); 
 
 	$('#addbutton').click(function(){
 
-		console.log("adding button");
+		
 
 		var r = $('<input/>').attr({
 
 			type:"button",
-			id: name,
-			value: name,
-			name:  name,
-			class: "newfield"
-			
+			id: "field"
 
 		});
 
-		$('#addfields').append(r);
-
-		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');
+		$('r').append('.addfields');
 
 
 	})
