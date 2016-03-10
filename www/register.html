@@ -32,13 +32,8 @@
 	I used the code for my menu button from that page.
 	-->
 
-	<div class="shy-menu">
-  <a class="shy-menu-hamburger">
-    <span class="layer top"></span>
-    <span class="layer mid"></span>
-    <span class="layer btm"></span>
-    </a>
-  <div class="shy-menu-panel">
+	
+  <div class="colors">
     <ul>
       <div class="red"></div>
       <div class="green"></div>
@@ -49,13 +44,7 @@
   </div>
 </div>
 
-<div class="menu open">
-  <a class="hamburger">
-    <span class="layer top"></span>
-    <span class="layer mid"></span>
-  <span class="layer btm"></span>
-  </a>
-</div>
+
 
 			<h1>PassBox</h1>
 			<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
@@ -88,57 +77,6 @@
 	</div>
 	</div>
 
-	<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* jQuery_demo */
-google_ad_slot = "2780937993";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-></div>
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script>
-
-
-$(function() {
-	
-	initDropDowns($("div.shy-menu"));
-
-});
-
-function initDropDowns(allMenus) {
-
-	allMenus.children(".shy-menu-hamburger").on("click", function() {
-		
-		var thisTrigger = jQuery(this),
-			thisMenu = thisTrigger.parent(),
-			thisPanel = thisTrigger.next();
-
-		if (thisMenu.hasClass("is-open")) {
-
-      		thisMenu.removeClass("is-open");
-			
-      		jQuery(document).off("click");                                 
-      		thisPanel.off("click");
-
-		} else {			
-			
-    		allMenus.removeClass("is-open");	
-			thisMenu.addClass("is-open");
-	
-			jQuery(document).on("click", function() {
-				allMenus.removeClass("is-open");
-			});
-			thisPanel.on("click", function(e) {
-				e.stopPropagation();
-			});
-		}
-		
-		return false;
-	});
-}
-</script>
 
 </body>
 </html>

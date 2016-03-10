@@ -1,69 +1,17 @@
-.shy-menu { 
+
+
+.color { 
   display: block;
-  height: 35px;
+  height: 335px;
   padding:0;
-  width: 35px;
-float: right;
-  background-color: rgba(33,40,44,.1);
+  width: 335px;
+  float: left;
+
   border-bottom-right-radius: 10px;
-  color: #fff;
-}
-.shy-menu.is-open,
-.shy-menu:hover { 
-  background-color: rgba(33,40,44,1);
+ 
 }
 
-.shy-menu.is-open {
-  
-}
 
-.shy-menu-panel { 
-  margin-left: -100px;
-}
-.is-open .shy-menu-panel { 
-  margin-left: 0;
-}
-
-/*** Hamburger ***/
-.shy-menu-hamburger {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100px;
-  height: 54px;
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.shy-menu-hamburger > .layer {
-  background-color: #fff;
-  border-radius: 1px;
-  display: block;
-  height: 2px;
-  overflow: hidden;
-  position: absolute;
-    left: 5px;
-  width: 18px;
-}
-
-.shy-menu-hamburger .layer.top { top: 9px; }
-.is-open .shy-menu-hamburger .layer.top { 
-  top: 17px;
-  left: 5px;
-  transform: rotate(45deg);
-}
-.shy-menu-hamburger .layer.mid { top: 16px; }
-.is-open .shy-menu-hamburger .layer.mid {
-  opacity: 0;
-  left: 0;
-}
-.shy-menu-hamburger .layer.btm { top: 23px; }
-.is-open .shy-menu-hamburger .layer.btm { 
-  top: 17px;
-  left: 5px;
-  transform: rotate(-45deg);
-}
 
 .red{
       

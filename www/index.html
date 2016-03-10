@@ -11,14 +11,15 @@
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="jq/jquery.mobile.structure-1.4.5.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/menu-style.css">
+	<link rel="stylesheet" type="text/css" href="css/colour.css">
 
 <!-- Include JS File Here -->
   
 	<script type="text/javascript" src="js/registration.js"></script>
 	<script src="jq/jquery-1.11.1.min.js"></script>
 	<script src="jq/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>	
 	<script type="text/javascript" src="js/navbar.js"  ></script>
+	<script type="text/javascript" src="js/style.js"></script>
 
 
 
@@ -33,8 +34,10 @@
 <!--- Header start here -->
 	 
 <div data-role="page" id ="page" data-theme="a">	
-	
-	<div data-role="header" data-position="inline" data-theme="a">
+
+	<!--- Header Start here -->	
+
+	<div data-role="header" id="header" data-position="inline" data-theme="a">
 
 			<!-- <a href="#menu" class="box-shadow-menu"></a>
 			<a href="#menu" class="border-menu"></a> -->
@@ -78,12 +81,12 @@
 
 <!--- Page 1 start here -->
 
-	<div data-role="main" class="ui-content" data-theme="a">
+	<div data-role="main" class="ui-content" id="page1" data-theme="a">
 
 		<div data-role="content" class="ui-content">
 
 		
-			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+			<p>Click the add button to add a new field in the application</p>
 
 			<!-- plus button -->
 			 <a href="#" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Plus Icon</a>
@@ -93,19 +96,14 @@
 
 			 <!-- back button -->
 			 <a href="#" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+
+			 <input type="button" name="addbutton" id="addbutton" value="addbutton">
 		
-			<!-- 
-			
-			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
-			<label for="slider1">Input slider:</label>
-			<input type="range" name="slider1" id="slider1" value="50" min="0" max="100" data-theme="a" />
-			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-			<legend>Cache settings:</legend>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
-			<label for="radio-choice-a1">On</label>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
-			<label for="radio-choice-b1">Off</label>
-			</fieldset> -->
+			<div class="addfields">
+				<p></p>
+
+			</div>
+
 		</div>
 	</div>
 </div>
@@ -125,32 +123,73 @@
 
 <div data-role="page" id ="page2" data-theme="a">
 
-<div class="container" data-theme="a">
-<div class="main">
+<!--- Header Start here -->
 
-<form class="form" method="post" action="#">
-<h2>Registration</h2>
+<div data-role="header" id="header" data-position="inline" data-theme="a">
 
-<label>Username :</label>
-<input type="text" name="username" id="username" placeholder="haris">
-<label>Email :</label>
-<input type="text" name="email" id="email">
-<label>Password Generator :</label>
-<input type="password" name="password" id="password">
-<input type="button" name="Generator" id="generator" value="Password Generator">
-<br>
-<br>
-<label>Confirm Password :</label>
-<input type="password" name="cpassword" id="cpassword">
-<label>Web Site URL:</label>
-<input type="text" name>
-<input type="button" name="register" id="register" value="Register">
-</form>
-</div>
-</div>
-</div>
+			<!-- <a href="#menu" class="box-shadow-menu"></a>
+			<a href="#menu" class="border-menu"></a> -->
 
-<!--- Page 2 end here -->
+	<!-- http://www.jqueryscript.net/tags.php?/Hamburger%20Button/ 
+	I used the code for my menu button from that page.
+	-->
+
+
+	<div class='navbar-toggle' title='Menu'>
+        	<div class='bar1'></div>
+        	<div class='bar2'></div>
+        	<div class='bar3'></div>
+    	</div>
+    
+    	<nav class="nav-hide">
+  			<ul>
+    			<li><h1>PassBox</h1></li>
+    			<li><a href="#">Password</a></li>
+			    <li><a href="#">Contact</a></li>
+    			<li><a href="#">About</a></li>
+  			</ul>
+		</nav>
+
+		<h1>PassBox</h1>
+		<!-- back button -->
+		<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+
+		<!-- <div class="round-button"></div> -->
+	
+	
+
+			<!-- <div class="round-button"></div> -->
+			
+	</div>
+<!--- Header ends here -->	
+
+	<!---Registration Form start here-->
+
+	<div class="container" data-theme="a">
+	<div class="main">
+
+	<form class="form" method="post" action="#">
+	<h2>Registration</h2>
+
+	<label>Username :</label>
+	<input type="text" name="username" id="username" placeholder="haris">
+	<label>Email :</label>
+	<input type="text" name="email" id="email">
+	<label>Password Generator :</label>
+	<input type="password" name="password" id="password">
+	<input type="button" name="Generator" id="generator" value="Password Generator">
+	<br>
+	<br>
+	<label>Confirm Password :</label>
+	<input type="password" name="cpassword" id="cpassword">
+	<label>Web Site URL:</label>
+	<input type="text" name>
+	<input type="button" name="register" id="register" value="Register">
+	</form>
+	</div>
+	</div><!---Registration Form ends here-->
+
+	</div><!--- Page 2 end here -->
 
 
 <!--- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -164,8 +203,9 @@
 
 <div data-role="page" id ="page3" data-theme="a">
 	 
+	<!--- Header Start here -->
 	
-		<div data-role="header" class="header" data-position="inline" data-theme="a">
+	<div data-role="header" class="header" data-position="inline" data-theme="a">
 
 			<!-- <a href="#menu" class="box-shadow-menu"></a>
 			<a href="#menu" class="border-menu"></a> -->
@@ -174,37 +214,41 @@
 	I used the code for my menu button from that page.
 	-->
 
-	<div class="shy-menu">
-  <a class="shy-menu-hamburger">
-    <span class="layer top"></span>
-    <span class="layer mid"></span>
-    <span class="layer btm"></span>
-    </a>
-  <div class="shy-menu-panel">
-    <ul>
-      <div class="red"></div>
-      <div class="green"></div>
-      <div class="yellow"></div>
-      <div class="blue"></div>
-      <div class="white"></div>
-    </ul>
-  </div>
-</div>
 
-<div class="menu open">
-  <a class="hamburger">
-    <span class="layer top"></span>
-    <span class="layer mid"></span>
-  <span class="layer btm"></span>
-  </a>
-</div>
+	<div class='navbar-toggle' title='Menu'>
+        	<div class='bar1'></div>
+        	<div class='bar2'></div>
+        	<div class='bar3'></div>
+    	</div>
+    
+    	<nav class="nav-hide">
+  			<ul>
+    			<li><h1>PassBox</h1></li>
+    			<li><a href="#">Password</a></li>
+			    <li><a href="#">Contact</a></li>
+    			<li><a href="#">About</a></li>
+  			</ul>
+		</nav>
 
-			<h1>PassBox</h1>
-			<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
+		<h1>PassBox</h1>
+		<!-- back button -->
+		<a href="index.html" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
 
-			<!-- <div class="round-button"></div> -->
-			
-		</div>
+		<!-- <div class="round-button"></div> -->
+	
+
+		 <div class="color">
+		    <ul>
+		      <div class="red"></div>
+		      <div class="green"></div>
+		      <div class="yellow"></div>
+		      <div class="blue"></div>
+		      <div class="white"></div>
+		    </ul>
+		 </div>
+
+				
+	</div><!--- Header ends here -->	
 
 
 		<div data-role="main" class="ui-content" data-theme="a">
@@ -214,23 +258,14 @@
 		
 			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
 
-			<fieldset data-role="controlgroup"  data-type="horizontal" data-role="fieldcontain">
-			<legend>Cache settings:</legend>
-
-			<input type="" name="radio-choice-a1" id="radio-choice-a1" value="on" checked="checked" />
-			<label for="radio-choice-a1">On</label>
-			<input type="radio" name="radio-choice-a1" id="radio-choice-b1" value="off"  />
-			<label for="radio-choice-b1">Off</label>
-			</fieldset>
+			
 
 			
 		
 			
 		</div>
 	</div>
-	</div>
-
-	<!--- Page 3 end here -->
+	</div><!--- Page 3 end here -->
 
 
 <!--- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -239,59 +274,8 @@
 <!--- //////////////////////////////////////////////////////////////////////////////////// -->
 
 
-<!--- Script page 3 -->
-
-	<script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* jQuery_demo */
-google_ad_slot = "2780937993";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-></div>
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script>
 
 
-$(function() {
-	
-	initDropDowns($("div.shy-menu"));
-
-});
-
-function initDropDowns(allMenus) {
-
-	allMenus.children(".shy-menu-hamburger").on("click", function() {
-		
-		var thisTrigger = jQuery(this),
-			thisMenu = thisTrigger.parent(),
-			thisPanel = thisTrigger.next();
-
-		if (thisMenu.hasClass("is-open")) {
-
-      		thisMenu.removeClass("is-open");
-			
-      		jQuery(document).off("click");                                 
-      		thisPanel.off("click");
-
-		} else {			
-			
-    		allMenus.removeClass("is-open");	
-			thisMenu.addClass("is-open");
-	
-			jQuery(document).on("click", function() {
-				allMenus.removeClass("is-open");
-			});
-			thisPanel.on("click", function(e) {
-				e.stopPropagation();
-			});
-		}
-		
-		return false;
-	});
-}
-</script>
 
 
 
