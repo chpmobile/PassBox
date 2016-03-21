@@ -3,17 +3,19 @@ $(document).ready(function() {
 $("#register").click(function() {
 	
 var name = $("#name").val();
+var username = $("#username").val();
 var email = $("#email").val();
 var password = $("#password").val();
 var cpassword = $("#cpassword").val();
+var bol = false;
 
-createInput(name);
 
-if (name == '' || email == '' || password == '' || cpassword == '') {
+
+if (name == '' || username =='' || email == '' || password == '' || cpassword == '') {
 
 	alert("Please fill all fields...!!!!!!");
 
-} else if ((password.length) < 8) {
+} else if ((cpassword.length) < 3) {
 
 	alert("Password should atleast 8 character in length...!!!!!!");
 
@@ -23,21 +25,26 @@ if (name == '' || email == '' || password == '' || cpassword == '') {
 
 } else {
 
-	$.post("php/register.php", {
-	name1: name,
-	email1: email,
-	password1: password
-	}, function(data) {
+	// $.post("php/register.php", {
+	// name1: name,
+	// email1: email,
+	// password1: password
+	// }, function(data) {
 
-	if (data == 'You have Successfully Registered.....') {
+	// if (data == 'You have Successfully Registered.....') {
 
-		$("form")[0].reset();
+	// 	$("form")[0].reset();
 
-	}
+	// }
 
-	alert(data);
+	// alert(data);
 
-	});
+	// });
+
+	bol = true;
+	window.location.assign("#page");
+	setfielda(bol,name);
+	
 
 }
 
@@ -47,35 +54,37 @@ if (name == '' || email == '' || password == '' || cpassword == '') {
 
 
 
-// $('#addbutton').click(function(){
-
-// createInput();
-// test();
-
-
-
-// })
-
-// function createInput(){
-
-// 	    var $input = $('<input type="button" value="new button"/>');
-// 	    $input.appendTo($("body"));
-
-// 	}
-
-
-// 		function test(){
-
-
-// 			var r = $('<input/>').attr({
-
-// 				type:"button",
-// 				id: "field"
-
-// 			});
-
-// 			$("body").append(r);
-
-// 		}
-
 });
+
+function setfielda(b,n){
+
+
+	if (b == true) {
+
+		console.log("adding button");
+
+		var r = $('<input/>').attr({
+
+			type:"button",
+			id: n,
+			value: n,
+			name:  n,
+			class: "newfield"
+			
+
+		});
+
+
+		$('#addfields').append(r);
+		bol = false;
+
+	}
+		
+		
+
+		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');
+
+
+	
+
+}

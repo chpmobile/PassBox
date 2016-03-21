@@ -8,6 +8,43 @@ $(document).ready(function(){
 
 	var name = "Facebbok";
 
+	// $('#addbutton').click(function(){
+
+	// 	console.log("adding button");
+
+	// 	var r = $('<input/>').attr({
+
+	// 		type:"button",
+	// 		id: name,
+	// 		value: name,
+	// 		name:  name,
+	// 		class: "newfield"
+			
+
+	// 	});
+
+	// 	$('#addfields').append(r);
+
+	// 	//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');
+
+
+	// })
+
+	setfield(name);
+
+});
+
+
+var text = '{"fields":[' +
+'{"name":"","username":"","email":"","password":"","url":""},' +
+'{"name":"","username":"","email":"","password":"","url":""},' +
+'{"name":"","username":"","email":"","password":"","url":""},';
+
+
+// fuction that create a new field button in the index
+function setfield (n){
+
+
 	$('#addbutton').click(function(){
 
 		console.log("adding button");
@@ -15,9 +52,9 @@ $(document).ready(function(){
 		var r = $('<input/>').attr({
 
 			type:"button",
-			id: name,
-			value: name,
-			name:  name,
+			id: n,
+			value: n,
+			name:  n,
 			class: "newfield"
 			
 
@@ -28,12 +65,12 @@ $(document).ready(function(){
 		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');
 
 
-	})
+	});
 
-});
+}
 
 
-
+//function that change the headers color
 function choosecolour(){
 
 $('.red').click(function(){
