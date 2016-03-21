@@ -7,6 +7,7 @@ var username = $("#username").val();
 var email = $("#email").val();
 var password = $("#password").val();
 var cpassword = $("#cpassword").val();
+var url = $("#url").val();
 var bol = false;
 
 
@@ -44,6 +45,13 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	bol = true;
 	window.location.assign("#page");
 	setfielda(bol,name);
+	$("#name").val('');
+	$("#username").val('');
+	 $("#email").val('');
+	 $("#password").val('');
+	 $("#cpassword").val('');
+	 $("#url").val('');
+	
 	
 
 }
@@ -77,6 +85,10 @@ function setfielda(b,n){
 
 		$('#addfields').append(r);
 		bol = false;
+
+		
+
+				
 
 	}
 		
