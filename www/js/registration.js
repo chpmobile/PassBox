@@ -12,6 +12,7 @@ var bol = false;
 
 
 
+
 if (name == '' || username =='' || email == '' || password == '' || cpassword == '') {
 
 	alert("Please fill all fields...!!!!!!");
@@ -26,6 +27,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 } else {
 
+////////////////////php connectino\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 	// $.post("php/register.php", {
 	// name1: name,
 	// email1: email,
@@ -41,12 +43,28 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	// alert(data);
 
 	// });
+////////////////////////////////////////////////////////////////
+
+
+//save the values on JSON
+var fieldstable [i] = 
+    {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
+i = i++;
+
+// var text = '{"fields":[' +
+// '{"name":"","username":"","email":"","password":"","url":""} ]}';
+
 
 	bol = true;
+	//take it to main page
 	window.location.assign("#page");
+
+	//calling the function
 	setfielda(bol,name);
-	$("#name").val('');
-	$("#username").val('');
+
+	//clear the inputs
+     $("#name").val('');
+	 $("#username").val('');
 	 $("#email").val('');
 	 $("#password").val('');
 	 $("#cpassword").val('');
