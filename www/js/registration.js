@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+var bol = false;
+
 $("#register").click(function() {
 	
 var name = $("#name").val();
@@ -8,7 +10,7 @@ var email = $("#email").val();
 var password = $("#password").val();
 var cpassword = $("#cpassword").val();
 var url = $("#url").val();
-var bol = false;
+
 
 
 
@@ -47,20 +49,22 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 
 //save the values on JSON
-var fieldstable [i] = 
-    {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
-i = i++;
+// var fieldstable [i] = 
+//     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
+// i = i++;
 
 // var text = '{"fields":[' +
 // '{"name":"","username":"","email":"","password":"","url":""} ]}';
 
 
-	bol = true;
+
 	//take it to main page
 	window.location.assign("#page");
 
 	//calling the function
-	setfielda(bol,name);
+	var button = setfielda(name);
+
+	$('#addfields').append(button);
 
 	//clear the inputs
      $("#name").val('');
@@ -75,6 +79,22 @@ i = i++;
 }
 
 
+		$(button).click(function(){
+
+			console.log("phase2");
+			window.location.assign("#page4");
+
+			document.getElementById("bname").innerHTML = name;
+			document.getElementById("busername").innerHTML = username;
+			document.getElementById("bemail").innerHTML = email;
+			document.getElementById("bpassword").innerHTML = password;
+			document.getElementById("burl").innerHTML = url;
+			console.log("phase3");
+
+		})
+
+
+
 
 });
 
@@ -82,12 +102,13 @@ i = i++;
 
 });
 
-function setfielda(b,n){
+function setfielda(n){
 
 
-	if (b == true) {
+	
 
 		console.log("adding button");
+		console.log(n);
 
 		var r = $('<input/>').attr({
 
@@ -96,19 +117,21 @@ function setfielda(b,n){
 			value: n,
 			name:  n,
 			class: "newfield"
+
 			
 
 		});
+	
 
 
-		$('#addfields').append(r);
-		bol = false;
+		
+		return r;
 
 		
 
 				
 
-	}
+	
 		
 		
 
