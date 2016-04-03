@@ -4,14 +4,56 @@ $(document).ready(function(){
 
 	//var $colour = $('.header').css('background').val();
 
-	$("p").append("Some appended text."); 
+	// $("p").append("Some appended text."); 
 
-	var name = "Facebbok";
+	// var name = "Facebbok";
 
 	
-	setfield(name);
+	// setfield(name);
+	
+
+	
+
+	$('#changecolor').click(function(){
+
+	  if ($(this).prop('checked'))
+	  {
+		$('.red').css('visibility','visible');
+		$('.blue').css('visibility','visible');
+		$('.green').css('visibility','visible');
+		$('.yellow').css('visibility','visible');
+	  }
+
+	 else {
+
+	 	$('.red').css('visibility','hidden');
+		$('.blue').css('visibility','hidden');
+		$('.green').css('visibility','hidden');
+		$('.yellow').css('visibility','hidden');
+
+	 }
+
+	})
+
+	// var $bg = document.getElementsById("header").getPropertyValue('background-color');
+
+	// var x = document.getElementsByClassName("header").css("background");
+
+	var headercolor = $('.header').css("background-color");
+	console.log(headercolor,x);
+	console.log("gd");
+
+	$('.abc').css("background");
+
+
 
 });
+
+
+
+
+
+
 
 
 var text = '{"fields":[' +
@@ -55,6 +97,7 @@ function choosecolour(){
 $('.red').click(function(){
 
     $('.header').css('background','#ff0000');
+
 
 });
 

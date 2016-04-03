@@ -1,6 +1,33 @@
 $(document).ready(function() {
 
 var bol = false;
+var length = 7;
+
+choosecolour();
+
+
+
+	$('#changecolor').click(function(){
+
+	  if ($(this).prop('checked'))
+	  {
+		$('.red').css('visibility','visible');
+		$('.blue').css('visibility','visible');
+		$('.green').css('visibility','visible');
+		$('.yellow').css('visibility','visible');
+	  }
+
+	 else {
+
+	 	$('.red').css('visibility','hidden');
+		$('.blue').css('visibility','hidden');
+		$('.green').css('visibility','hidden');
+		$('.yellow').css('visibility','hidden');
+
+	 }
+
+	})
+
 
 $("#register").click(function() {
 	
@@ -19,7 +46,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 	alert("Please fill all fields...!!!!!!");
 
-} else if ((cpassword.length) < 3) {
+} else if ((cpassword.length) < length) {
 
 	alert("Password should atleast 8 character in length...!!!!!!");
 
@@ -57,7 +84,6 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 // '{"name":"","username":"","email":"","password":"","url":""} ]}';
 
 
-
 	//take it to main page
 	window.location.assign("#page");
 
@@ -74,7 +100,8 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	 $("#cpassword").val('');
 	 $("#url").val('');
 	
-	
+	var color = $('.header').css('background-color');
+		console.log(color);
 
 }
 
@@ -93,12 +120,37 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 		})
 
-
+		
+		$('#header1').css('background',color);
 
 
 });
 
+	$('#generator').click(function(){
 
+		var pg = generatePass(length);
+		console.log(pg);
+		document.getElementById("password").value = pg;
+
+	})
+
+
+	$('#eye').click(function(){
+
+
+		if ($(this).prop('checked'))
+		{
+			$('#password').attr('type','text');
+			$('#cpassword').attr('type','text');
+		}
+		
+		else{
+			$('#password').attr('type','password');
+			$('#cpassword').attr('type','password');
+		}
+
+
+	})
 
 });
 
@@ -119,25 +171,73 @@ function setfielda(n){
 			class: "newfield"
 
 			
-
-		});
-	
+	});
 
 
 		
 		return r;
 
-		
+		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');	
 
-				
-
-	
-		
-		
-
-		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');
+}
 
 
-	
+function generatePass(plength){
+
+    var keylistalpha="abcdefghijklmnopqrstuvwxyz";
+    var keylistint="123456789";
+    var keylistspec="!@#_";
+    var temp='';
+    var len = plength/2;
+    var len = len - 1;
+    var lenspec = plength-len-len;
+
+    for (i=0;i<len;i++)
+        temp+=keylistalpha.charAt(Math.floor(Math.random()*keylistalpha.length));
+
+    for (i=0;i<lenspec;i++)
+        temp+=keylistspec.charAt(Math.floor(Math.random()*keylistspec.length));
+
+    for (i=0;i<len;i++)
+        temp+=keylistint.charAt(Math.floor(Math.random()*keylistint.length));
+
+        temp=temp.split('').sort(function(){return 0.5-Math.random()}).join('');
+
+    return temp;
+}
+
+//function that change the headers color
+function choosecolour(){
+
+$('.red').click(function(){
+
+    $('.header').css('background','#ff0000');
+
+
+});
+
+$('.green').click(function(){
+
+    $('.header').css('background','#008000');
+
+});
+
+$('.blue').click(function(){
+
+    $('.header').css('background','#3B88DE');
+
+});
+
+$('.white').click(function(){
+
+    $('.header').css('background','#ffffff');
+
+});
+
+$('.yellow').click(function(){
+
+    $('.header').css('background','#ffd700');
+
+});
 
 }
