@@ -2,6 +2,7 @@
 
 .color { 
   display: block;
+  position: absolute;
   /*height: 335px;*/
   padding:0;
   /*width: 335px;*/
