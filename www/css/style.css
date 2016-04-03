@@ -81,7 +81,7 @@ div.mainbox{
     float:left;
     padding: 10px 55px 40px;
     background-color:#3FA9F5;
-    border: 10px solid white;
+   /* border: 10px solid white;*/
     box-shadow: 0 0 10px;
     border-radius: 2px;
     font-size: 13px;
