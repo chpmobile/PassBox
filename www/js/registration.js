@@ -5,7 +5,12 @@ var length = 7;
 
 choosecolour();
 
+$('#round-button').click(function(){
 
+	$("p").hide();
+
+
+})
 
 	$('#changecolor').click(function(){
 
@@ -76,6 +81,22 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 
 //save the values on JSON
+
+// var exampleJSON = [
+//  {"name":name1, "username":username, "email":email, "password":cpassword, "url":url},
+//  {"name":name2, "username":username, "email":email, "password":cpassword, "url":url},
+//  {"name":name3, "username":username, "email":email, "password":cpassword, "url":url}
+
+// ];
+
+// for(int i=0; i<exampleJSON.length; i++ ) {
+
+// 	exampleJSON[i].name;
+// 	exampleJSON[i].username;
+
+// 	exampleJSON.push({"name":name4, "username":username, "email":email, "password":cpassword, "url":url})
+// }
+
 // var fieldstable [i] = 
 //     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
 // i = i++;
@@ -88,10 +109,15 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	window.location.assign("#page");
 
 	//calling the function
-	var button = setfielda(name);
+	var button = setfield(name);
 
 	$('#addfields').append(button);
 
+	console.log(name);
+
+	$(name).html("dfghs");
+
+	console.log(name);
 	//clear the inputs
      $("#name").val('');
 	 $("#username").val('');
@@ -99,6 +125,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	 $("#password").val('');
 	 $("#cpassword").val('');
 	 $("#url").val('');
+	 console.log(name);
 	
 	var color = $('.header').css('background-color');
 		console.log(color);
@@ -154,7 +181,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 });
 
-function setfielda(n){
+function setfield(n){
 
 
 	
@@ -162,18 +189,19 @@ function setfielda(n){
 		console.log("adding button");
 		console.log(n);
 
-		var r = $('<input/>').attr({
+		var r = $('<div>').attr({
 
-			type:"button",
+			
 			id: n,
-			value: n,
 			name:  n,
-			class: "newfield"
+			class: "newfield",
+			textContent: n
+
 
 			
 	});
 
-
+		
 		
 		return r;
 
