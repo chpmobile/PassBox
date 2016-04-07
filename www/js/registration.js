@@ -107,7 +107,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	// exampleJSON[i].username;
 
 
-exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
+// exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
 
 
