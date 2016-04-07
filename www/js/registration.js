@@ -2,16 +2,21 @@ $(document).ready(function() {
 
 var bol = false;
 var len = 7;
-// var exampleJSON[];
+var exampleJSON;
 
 //printing
-// for(int i=0; i<exampleJSON.length; i++ ) {
 
-// console.log(exampleJSON[i]);
-//  // $('#addfields').html(exampleJSON[i]);
- 
+if(exampleJSON) 
+{
+	for(var i=0; i<exampleJSON.length; i++ ) {
 
-// }
+	console.log(exampleJSON);
+	 // $('#addfields').html(exampleJSON[i]);
+	 
+
+	}
+}
+
 
 
 choosecolour();
@@ -95,9 +100,9 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 //printing
 // for(int i=0; i<exampleJSON.length;) {
-// var exampleJSON[];
+
  
-//  {"name":name, "username":username, "email":email, "password":cpassword, "url":url},
+
 
 // ];
 // }
@@ -107,9 +112,9 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	// exampleJSON[i].username;
 
 
-// exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
+exampleJSON = ({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
-
+console.log(exampleJSON);
 
 // var fieldstable [i] = 
 //     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
