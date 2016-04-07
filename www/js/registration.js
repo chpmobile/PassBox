@@ -1,7 +1,18 @@
 $(document).ready(function() {
 
 var bol = false;
-var length = 7;
+var len = 7;
+// var exampleJSON[];
+
+//printing
+// for(int i=0; i<exampleJSON.length; i++ ) {
+
+// console.log(exampleJSON[i]);
+//  // $('#addfields').html(exampleJSON[i]);
+ 
+
+// }
+
 
 choosecolour();
 
@@ -82,27 +93,29 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 //save the values on JSON
 
-// var exampleJSON = [
-//  {"name":name1, "username":username, "email":email, "password":cpassword, "url":url},
-//  {"name":name2, "username":username, "email":email, "password":cpassword, "url":url},
-//  {"name":name3, "username":username, "email":email, "password":cpassword, "url":url}
+//printing
+// for(int i=0; i<exampleJSON.length;) {
+// var exampleJSON[];
+ 
+//  {"name":name, "username":username, "email":email, "password":cpassword, "url":url},
 
 // ];
-
-// for(int i=0; i<exampleJSON.length; i++ ) {
-
-// 	exampleJSON[i].name;
-// 	exampleJSON[i].username;
-
-// 	exampleJSON.push({"name":name4, "username":username, "email":email, "password":cpassword, "url":url})
 // }
+// for(int i=0; i<exampleJSON.length; i++ ) {}
+
+	// exampleJSON[i].name;
+	// exampleJSON[i].username;
+
+
+exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
+
+
 
 // var fieldstable [i] = 
 //     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
 // i = i++;
 
-// var text = '{"fields":[' +
-// '{"name":"","username":"","email":"","password":"","url":""} ]}';
+
 
 
 	//take it to main page
@@ -155,7 +168,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 	$('#generator').click(function(){
 
-		var pg = generatePass(length);
+		var pg = generatePass(len);
 		console.log(pg);
 		document.getElementById("password").value = pg;
 
@@ -178,6 +191,8 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 
 	})
+
+
 
 });
 
