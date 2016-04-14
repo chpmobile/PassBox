@@ -10,7 +10,7 @@ var email;
 var password;
 var cpassword;
 var url;
-var data;
+
 
 
 
@@ -110,6 +110,7 @@ exampleJSON = ({"name":name, "username":username, "email":email, "password":cpas
 var data;
 
 
+
 id++;
 console.log(id);
 
@@ -119,11 +120,11 @@ console.log(id);
 // storage.username = username;
 
 data.push(
-{ id :{"name":name, "username":username, "email":email, "password":cpassword, "url":url}}
+{"id" :{"name":name, "username":username, "email":email, "password":cpassword, "url":url}}
 	);
 
 console.log(exampleJSON);
-console.log(data.id);
+
 
 
 
