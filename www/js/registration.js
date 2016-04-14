@@ -10,11 +10,13 @@ var email;
 var password;
 var cpassword;
 var url;
+var data;
 
 
 
-
-	
+var localData = JSON.parse(window.localStorage.getItem(id));
+console.log(localData);
+console.log(id);
   
 		
 
@@ -91,59 +93,45 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 } else {
 
-////////////////////php connectino\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-	// $.post("php/register.php", {
-	// name1: name,
-	// email1: email,
-	// password1: password
-	// }, function(data) {
-
-	// if (data == 'You have Successfully Registered.....') {
-
-	// 	$("form")[0].reset();
-
-	// }
-
-	// alert(data);
-
-	// });
-////////////////////////////////////////////////////////////////
 
 
-//save the values on JSON
-
-//printing
-// for(int i=0; i<exampleJSON.length;) {
-
- 
-
-
-// ];
-// }
-// for(int i=0; i<exampleJSON.length; i++ ) {}
-
-	// exampleJSON[i].name;
-	// exampleJSON[i].username;
+//Take the latest id from the lacal storage 
+//Convert id from string to integer
+window.localStorage.setItem("id",id);
+id = parseInt(window.localStorage.getItem(id));
 
 
 //Pass the information of user account to JSON
 
 exampleJSON = ({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
+
+
+var data;
+
+
+id++;
+console.log(id);
+
+// var storage = array[];
+
+// storage.name = name;
+// storage.username = username;
+
+data.push(
+{ id :{"name":name, "username":username, "email":email, "password":cpassword, "url":url}}
+	);
+
 console.log(exampleJSON);
+console.log(data.id);
 
-// var fieldstable [i] = 
-//     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
-// i = i++;
 
-//Take the latest id from the lacal storage 
-//Convert id from string to integer
 
 //Convert the exampleJSON to string
 var localData = JSON.stringify(exampleJSON);
 
 //save the id and the exampleJSON to local storage
-window.localStorage.setItem("id",localData);
+window.localStorage.setItem(id,localData);
 
 //Take the length og the local storage table
 var test = window.localStorage.length;
