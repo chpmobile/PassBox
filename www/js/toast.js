@@ -44,7 +44,7 @@ toast.js may be freely distributed under the MIT license.
 		clearTimeout( this.timeout_id );
 
 		//change the page that the meesage will drop from body to page
-		var body = document.getElementsByTagName('#page')[0];
+		var body = document.getElementsByTagName('body')[0];
 
 		var previous_toast = document.getElementById("toast_container");
 		if ( previous_toast ){
