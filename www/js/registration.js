@@ -3,6 +3,20 @@ $(document).ready(function() {
 var bol = false;
 var len = 7;
 var exampleJSON;
+var id;
+var name;
+var username;
+var email;
+var password;
+var cpassword;
+var url;
+
+
+
+
+	
+  
+		
 
 //printing
 
@@ -52,12 +66,12 @@ $('#round-button').click(function(){
 
 $("#register").click(function() {
 	
-var name = $("#name").val();
-var username = $("#username").val();
-var email = $("#email").val();
-var password = $("#password").val();
-var cpassword = $("#cpassword").val();
-var url = $("#url").val();
+ name = $("#name").val();
+ username = $("#username").val();
+ email = $("#email").val();
+ password = $("#password").val();
+ cpassword = $("#cpassword").val();
+ url = $("#url").val();
 
 
 
@@ -112,6 +126,8 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 	// exampleJSON[i].username;
 
 
+//Pass the information of user account to JSON
+
 exampleJSON = ({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
 console.log(exampleJSON);
@@ -120,8 +136,25 @@ console.log(exampleJSON);
 //     {"name":name, "username":username, "email":email, "password":cpassword, "url":url};
 // i = i++;
 
+//Take the latest id from the lacal storage 
+//Convert id from string to integer
 
+//Convert the exampleJSON to string
+var localData = JSON.stringify(exampleJSON);
 
+//save the id and the exampleJSON to local storage
+window.localStorage.setItem("id",localData);
+
+//Take the length og the local storage table
+var test = window.localStorage.length;
+
+//Convert the exampleJSON from styring back to data
+var localData = JSON.parse(window.localStorage.getItem(id));
+
+//Testing  
+console.log(localData);
+console.log(test);
+console.log(id);
 
 	//take it to main page
 	window.location.assign("#page");
