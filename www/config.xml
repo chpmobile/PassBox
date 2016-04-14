@@ -18,6 +18,7 @@
         Chpmobile
     </author>
 
+    <preference name="phonegap-version" value="3.7.0" />
     <platform name="android" />
     <platform name="android">
               <icon src="icon/logo.png" density="ldpi" />
@@ -25,5 +26,10 @@
               <icon src="icon/logo.png" density="hdpi" />
               <icon src="icon/logo.png" density="xhdpi" />
      </platform>
+
+      <!-- required for dialogs -->
+     <gap:plugin name="org.apache.cordova.dialogs"/>
+    <plugin name="de.appplant.cordova.plugin.local-notification" 
+    spec="0.8.1" source="pgb" />
 
 </widget>
