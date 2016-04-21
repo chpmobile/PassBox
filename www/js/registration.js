@@ -260,7 +260,7 @@ function setfield(n){
 		//console.log("adding button");
 		//console.log(n);
 
-		var r = $('<input/>').attr({
+		var r = $('<input>').attr({
 
 			type: "button",
 			value: n,
