@@ -94,7 +94,7 @@ $("#register").click(function() {
  username = $("#username").val();
  email = $("#email").val();
  password = $("#password").val();
- cpassword = $("#cpassword").val();
+ //cpassword = $("#cpassword").val();
  url = $("#url").val();
 
 
@@ -105,13 +105,13 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 	alert("Please fill all fields...!!!!!!");
 
-} else if ((cpassword.length) < length) {
+} else if ((password.length) < length) {
 
 	alert("Password should atleast 8 character in length...!!!!!!");
 
-} else if (!(password).match(cpassword)) {
+// } else if (!(password).match(cpassword)) {
 
-	alert("Your passwords don't match. Try again?");
+// 	alert("Your passwords don't match. Try again?");
 
 } else {
 
@@ -192,7 +192,7 @@ console.log(localData);
 	 $("#username").val('');
 	 $("#email").val('');
 	 $("#password").val('');
-	 $("#cpassword").val('');
+	// $("#cpassword").val('');
 	 $("#url").val('');
 	 //console.log(name);
 	
@@ -237,12 +237,12 @@ console.log(localData);
 		if ($(this).prop('checked'))
 		{
 			$('#password').attr('type','text');
-			$('#cpassword').attr('type','text');
+			//$('#cpassword').attr('type','text');
 		}
 		
 		else{
 			$('#password').attr('type','password');
-			$('#cpassword').attr('type','password');
+			//$('#cpassword').attr('type','password');
 		}
 
 
@@ -262,13 +262,12 @@ function setfield(n){
 
 		var r = $('<input>').attr({
 
-			type: "button",
-			value: n,
+			type: "button",			
 			id: n,
 			name:  n,
 			class: "ui-btn ui-shadow ui-corner-all",
-			
-			innerText: n
+			value: n
+		
 
 
 			
