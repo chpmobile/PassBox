@@ -30,11 +30,11 @@ if(window.localStorage.length>0)
 
 		var localData = JSON.parse(window.localStorage.getItem(i));
 
-		console.log(localData.name);
+		//console.log(localData.name);
 		console.log(i + "     " + localData);
 	 // $('#addfields').html(exampleJSON[i]);
 	 	var n=localData.name;
-	 	console.log(n);
+	 	//console.log(n);
 	 	var button = setfield(n);
 
 		$('#addfields').append(button);
@@ -101,7 +101,7 @@ $("#register").click(function() {
 
 
 
-if (name == '' || username =='' || email == '' || password == '' || cpassword == '') {
+if (name == '' || username =='' || email == '' || password == '') {
 
 	alert("Please fill all fields...!!!!!!");
 
@@ -126,7 +126,7 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 
 //Pass the information of user account to JSON
-exampleJSON = ({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
+exampleJSON = ({"name":name, "username":username, "email":email, "password":password, "url":url});
 
 id = window.localStorage.length -1;
 
@@ -184,7 +184,7 @@ console.log(localData);
 
 	//console.log(name);
 
-	$(name).html("dfghs");
+	
 
 	//console.log(name);
 	//clear the inputs
@@ -267,6 +267,7 @@ function setfield(n){
 			name:  n,
 			class: "ui-btn ui-shadow ui-corner-all",
 			value: n
+			
 		
 
 
