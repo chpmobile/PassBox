@@ -3,32 +3,54 @@ $(document).ready(function() {
 var bol = false;
 var len = 7;
 var exampleJSON;
-var id;
+var id = 0;
 var name;
 var username;
 var email;
 var password;
 var cpassword;
 var url;
+var data;
+var first = true;
+var localData;
 
 
+ //var localData = JSON.parse(window.localStorage.getItem(id));
 
-
-var localData = JSON.parse(window.localStorage.getItem(id));
-console.log(localData);
-console.log(id);
   
 		
 
 //printing
 
-if(exampleJSON) 
+if(window.localStorage.length>0) 
 {
-	for(var i=0; i<exampleJSON.length; i++ ) {
+	//window.localStorage.clear();
+	console.log("pass");
+	for(var i=0; i<localStorage.length; i++ ) {
 
-	console.log(exampleJSON);
+		var localData = JSON.parse(window.localStorage.getItem(i));
+
+		console.log(localData.name);
+		console.log(i + "     " + localData);
 	 // $('#addfields').html(exampleJSON[i]);
-	 
+	 	var n=localData.name;
+	 	console.log(n);
+	 	var button = setfield(n);
+
+		$('#addfields').append(button);
+		$(button).click(function(){
+
+			//console.log("phase2");
+			window.location.assign("#page4");
+
+			document.getElementById("bname").innerHTML = localData.name;
+			document.getElementById("busername").innerHTML = localData.username;
+			document.getElementById("bemail").innerHTML = localData.email;
+			document.getElementById("bpassword").innerHTML = localData.password;
+			document.getElementById("burl").innerHTML = localData.url;
+			//console.log("phase3");
+
+		})
 
 	}
 }
@@ -97,39 +119,46 @@ if (name == '' || username =='' || email == '' || password == '' || cpassword ==
 
 //Take the latest id from the lacal storage 
 //Convert id from string to integer
-window.localStorage.setItem("id",id);
-id = parseInt(window.localStorage.getItem(id));
+
+// id = parseInt(window.localStorage.getItem(id));
+
+//window.localStorage.setItem("id",id);
 
 
 //Pass the information of user account to JSON
-
 exampleJSON = ({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
+id = window.localStorage.length -1;
 
 
-var data;
+// var data;
+
+
+
+// exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
+
 
 
 
 id++;
-console.log(id);
+console.log("id      :" + id);
 
 // var storage = array[];
 
 // storage.name = name;
 // storage.username = username;
 
-data.push(
-{"id" :{"name":name, "username":username, "email":email, "password":cpassword, "url":url}}
-	);
+// data.push(
+// {"id" :{"name":name, "username":username, "email":email, "password":cpassword, "url":url}}
+// 	);
 
-console.log(exampleJSON);
+//console.log(exampleJSON);
 
 
 
 
 //Convert the exampleJSON to string
-var localData = JSON.stringify(exampleJSON);
+localData = JSON.stringify(exampleJSON);
 
 //save the id and the exampleJSON to local storage
 window.localStorage.setItem(id,localData);
@@ -138,12 +167,12 @@ window.localStorage.setItem(id,localData);
 var test = window.localStorage.length;
 
 //Convert the exampleJSON from styring back to data
-var localData = JSON.parse(window.localStorage.getItem(id));
+//var localData = JSON.parse(window.localStorage.getItem(id));
 
 //Testing  
 console.log(localData);
-console.log(test);
-console.log(id);
+//console.log(test);
+//console.log(id);
 
 	//take it to main page
 	window.location.assign("#page");
@@ -153,11 +182,11 @@ console.log(id);
 
 	$('#addfields').append(button);
 
-	console.log(name);
+	//console.log(name);
 
 	$(name).html("dfghs");
 
-	console.log(name);
+	//console.log(name);
 	//clear the inputs
      $("#name").val('');
 	 $("#username").val('');
@@ -165,17 +194,17 @@ console.log(id);
 	 $("#password").val('');
 	 $("#cpassword").val('');
 	 $("#url").val('');
-	 console.log(name);
+	 //console.log(name);
 	
 	var color = $('.header').css('background-color');
-		console.log(color);
+		//console.log(color);
 
 }
 
 
 		$(button).click(function(){
 
-			console.log("phase2");
+			//console.log("phase2");
 			window.location.assign("#page4");
 
 			document.getElementById("bname").innerHTML = name;
@@ -183,7 +212,7 @@ console.log(id);
 			document.getElementById("bemail").innerHTML = email;
 			document.getElementById("bpassword").innerHTML = password;
 			document.getElementById("burl").innerHTML = url;
-			console.log("phase3");
+			//console.log("phase3");
 
 		})
 
@@ -196,7 +225,7 @@ console.log(id);
 	$('#generator').click(function(){
 
 		var pg = generatePass(len);
-		console.log(pg);
+		//console.log(pg);
 		document.getElementById("password").value = pg;
 
 	})
@@ -228,16 +257,18 @@ function setfield(n){
 
 	
 
-		console.log("adding button");
-		console.log(n);
+		//console.log("adding button");
+		//console.log(n);
 
-		var r = $('<div>').attr({
+		var r = $('<input/>').attr({
 
-			
+			type: "button",
+			value: n,
 			id: n,
 			name:  n,
-			class: "newfield",
-			textContent: n
+			class: "ui-btn ui-shadow ui-corner-all",
+			
+			innerText: n
 
 
 			
