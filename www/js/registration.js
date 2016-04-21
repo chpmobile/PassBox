@@ -260,14 +260,14 @@ function setfield(n){
 		//console.log("adding button");
 		//console.log(n);
 
-		var r = $('<button>').attr({
+		var r = $('<input/>').attr({
 
 			type: "button",			
 			id: n,
 			name:  n,
 			class: "ui-btn ui-shadow ui-corner-all",
-			value: n
-			
+			value: n,
+			textContent:n
 		
 
 
