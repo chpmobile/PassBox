@@ -13,7 +13,7 @@ var url;
 var data;
 var first = true;
 var localData;
-
+var n;
 
  //var localData = JSON.parse(window.localStorage.getItem(id));
 
@@ -33,11 +33,14 @@ if(window.localStorage.length>0)
 		//console.log(localData.name);
 		console.log(i + "     " + localData);
 	 // $('#addfields').html(exampleJSON[i]);
-	 	var n=localData.name;
+	 	 n=localData.name;
 	 	//console.log(n);
 	 	var button = setfield(n);
 
 		$('#addfields').append(button);
+
+		document.getElementById(n).textContent = n;
+
 		$(button).click(function(){
 
 			//console.log("phase2");
@@ -180,8 +183,10 @@ console.log(localData);
 	//calling the function
 	var button = setfield(name);
 
+
 	$('#addfields').append(button);
 
+	document.getElementById(name).textContent = name;
 	//console.log(name);
 
 	
@@ -260,18 +265,17 @@ function setfield(n){
 		//console.log("adding button");
 		//console.log(n);
 
-		var r = '<input type="button" name=n id=n value=n class:"newfield">';
+		var r = $('<button>').attr({
 
-			// type: "button",			
-			// id: n,
-			// name:  n,
-			// class: "newfield",
-			// value: n
-		
+					
+			id: n,
+			name:  n,
+			class: "ui-btn ui-shadow ui-corner-all",
+			value: n,
 
 
 			
-	// });
+	});
 
 		
 		
