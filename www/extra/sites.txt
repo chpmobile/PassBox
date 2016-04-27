@@ -13,3 +13,6 @@ http://demos.jquerymobile.com/1.4.5/panel-external/page-b.html
 
 ////JQUERY DOWNLOADS\\\\\
 http://jquerymobile.com/download/
+
+///password\\\
+http://www.sitepoint.com/create-password-manager-app-cordova/
