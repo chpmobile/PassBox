@@ -18,12 +18,12 @@ var localData;
  //var localData = JSON.parse(window.localStorage.getItem(id));
 
   
-localData = JSON.parse(window.localStorage.getItem(id));
-console.log("testfdsf"+localData);
+data = JSON.parse(window.localStorage.getItem(id));
+
 
 //printing
 
-if(localData !==null) 
+if(data !==null) 
 {
 	//window.localStorage.clear();
 	console.log("pass");
