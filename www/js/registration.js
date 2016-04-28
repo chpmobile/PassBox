@@ -3,7 +3,7 @@ $(document).ready(function() {
 var bol = false;
 var len = 7;
 var exampleJSON;
-var id = 0;
+var id;
 var name;
 var username;
 var email;
@@ -13,21 +13,32 @@ var url;
 var data;
 var first = true;
 var localData;
+var localdata;
 
 
  //var localData = JSON.parse(window.localStorage.getItem(id));
+//window.localStorage.clear();
 
+id = window.localStorage.getItem("autoid");
+if(!id) id =0;
+
+console.log(id);
   
-data = JSON.parse(window.localStorage.getItem(id));
+localdata = JSON.parse(window.localStorage.getItem(id-1));
+console.log(localdata);
+
+if(localdata) data =true;
+//data = Object.keys(localdata).length;
+console.log(data);
 
 
 //printing
 
-if(data !==null) 
+if(data) 
 {
-	//window.localStorage.clear();
+	
 	console.log("pass");
-	for(var i=0; i<localStorage.length; i++ ) {
+	for(var i=0; i<=id-1; i++ ) {
 
 		var localData = JSON.parse(window.localStorage.getItem(i));
 
@@ -105,6 +116,7 @@ $("#register").click(function() {
 if (name == '' || username =='' || email == '' || password == '') {
 
 	alert("Please fill all fields...!!!!!!");
+	createMessage();
 
 } else if ((password.length) < length) {
 
@@ -123,26 +135,38 @@ if (name == '' || username =='' || email == '' || password == '') {
 
 // id = parseInt(window.localStorage.getItem(id));
 
-//window.localStorage.setItem("id",id);
+
 
 
 //Pass the information of user account to JSON
 exampleJSON = ({"name":name, "username":username, "email":email, "password":password, "url":url});
 
-id = window.localStorage.length -1;
+
+//window.localStorage.setItem("id",id);
 
 
-// var data;
 
 
+
+console.log("id      :" + id);
+
+
+//store somethign with ID here
+//Convert the exampleJSON to string
+localData = JSON.stringify(exampleJSON);
+
+//save the id and the exampleJSON to local storage
+window.localStorage.setItem(id,localData);
+
+id++;
+
+window.localStorage.setItem("autoid",id);
 
 // exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
 
 
 
 
-id++;
-console.log("id      :" + id);
 
 // var storage = array[];
 
@@ -158,14 +182,10 @@ console.log("id      :" + id);
 
 
 
-//Convert the exampleJSON to string
-localData = JSON.stringify(exampleJSON);
 
-//save the id and the exampleJSON to local storage
-window.localStorage.setItem(id,localData);
 
 //Take the length og the local storage table
-var test = window.localStorage.length;
+//var test = window.localStorage.length;
 
 //Convert the exampleJSON from styring back to data
 //var localData = JSON.parse(window.localStorage.getItem(id));
