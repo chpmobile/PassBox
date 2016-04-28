@@ -14,9 +14,75 @@ var data;
 var first = true;
 var localData;
 var localdata;
+var a;
+var userpass;
+
+$('#delete').click(function(){
+
+	var del = document.getElementById("bname").value;
+	document.getElementById(del).remove();
+
+})
+
+
+
+
+$('#regpass').click(function(){
+
+userpass = $('#user_password').val();
+
+if(userpass ==''){
+
+	console.log("give pass");
+	alert("give pass");
+
+}
+
+else{
+
+
+ a = window.localStorage.getItem("user");
+	
+
+if (a)a=0;
+
+if (a!==0)
+
+{
+	console.log("save password");
+	userpass = $('#user_password').val();
+
+	console.log(userpass);
+
+	
+    window.localStorage.setItem("user", userpass);    
+    window.location.assign("#page");
+
+} 
+
+
+	console.log(a);
+	console.log(userpass);
+	a = window.localStorage.getItem("user", userpass);  
+	userpass = $('#user_password').val();
+
+   if (a==userpass){
+
+   	console.log("PASS");
+	window.location.assign("#page");
+
+}else{
+
+		alert("wrong password");
+
+	}
+
+}
+})
 
 
  //var localData = JSON.parse(window.localStorage.getItem(id));
+
 //window.localStorage.clear();
 
 id = window.localStorage.getItem("autoid");

@@ -45,6 +45,18 @@
 <body>
 
 
+<div data-role="page" id="pageone" data-theme="a">
+    <div data-role="header" data-theme="a">
+      <h1>Access</h1>
+    </div>
+
+    <div data-role="main" class="ui-content" data-theme="a">
+      <p style="text-align: center">Enter Password</p>
+      <input type="password" id="user_password" />
+     <button id="regpass">Submit</button>
+    </div>
+  </div>
+
 <!--- Header start here -->
 	 
 <div data-role="page" id ="page" data-theme="a">	
@@ -351,7 +363,7 @@
 		<h1>PassBox</h1>
 		<!-- back button -->
 		<a href="#page" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
-		
+		<a href="#page" id="delete" class="ui-btn ui-icon-delete ui-btn-icon-left"></a>
 	</div>
 <!--- Header ends here -->	
 
