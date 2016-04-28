@@ -17,26 +17,35 @@ font-family: 'Droid Serif', serif;
 position:relative;
 }
 div.main{
-/*width: 320px;*/
+
 float:left;
 padding: 10px 55px 40px;
-background-color: rgba(187, 255, 184, 0.65);
-border: 15px solid white;
+background-color: #E5E5E5;
+/*border: 15px solid white;
 box-shadow: 0 0 10px;
 border-radius: 2px;
-font-size: 13px;
+font-size: 13px;*/
 }
-input[type=text],[type=password] {
+
+div.mainbox{
+
+float:left;
+padding: 10px 55px 40px;
+ background-color:#3FA9F5;
+
+}
+input[type=text],[type=password], textarea {
+
 width: 97.7%;
 height: 34px;
 padding-left: 5px;
 margin-bottom: 20px;
 margin-top: 8px;
-box-shadow: 0 0 5px #00F5FF;
-border: 2px solid #00F5FF;
+background-color: #E5E5E5 !important;
 color: #4f4f4f;
 font-size: 16px;
 border-radius: 10px;
+
 }
 label{
 color: #464646;

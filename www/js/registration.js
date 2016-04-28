@@ -55,11 +55,11 @@ if(data)
 			//console.log("phase2");
 			window.location.assign("#page4");
 
-			document.getElementById("bname").innerHTML = localData.name;
-			document.getElementById("busername").innerHTML = localData.username;
-			document.getElementById("bemail").innerHTML = localData.email;
-			document.getElementById("bpassword").innerHTML = localData.password;
-			document.getElementById("burl").innerHTML = localData.url;
+			document.getElementById("bname").value = localData.name;
+			document.getElementById("busername").value = localData.username;
+			document.getElementById("bemail").value = localData.email;
+			document.getElementById("bpassword").value = localData.password;
+			document.getElementById("burl").value = localData.url;
 			//console.log("phase3");
 
 		})
