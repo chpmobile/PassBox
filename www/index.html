@@ -363,7 +363,7 @@
 		<h1>PassBox</h1>
 		<!-- back button -->
 		<a href="#page" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
-		<a href="#page" id="delete" class="ui-btn ui-icon-delete ui-btn-icon-left"></a>
+		<!-- <a href="#page" id="delete" class="ui-btn ui-icon-delete ui-btn-icon-left"></a> -->
 	</div>
 <!--- Header ends here -->	
 
@@ -373,11 +373,11 @@
 	<div class="mainbox">
 
 	<form class="form" method="post" action="#">
-	<h2><div class="bname"></div></h2>
+	<h2><div id="bname"></div></h2>
 
-	<label>Name :
+	<label>Name :</label>
 	<input type="text" id="bname" class="box">
-	</label>
+	
 
 	<label>Username :</label>
 	<input type="text" id="busername" class="box">
@@ -390,6 +390,8 @@
 
 	<label>Web Site URL:</label>
 	<input type="text" id="burl" class="box">
+
+	<input type="button" name="delete" id="delete" value="delete">
 
 	<!-- <input type="button" name="register" id="register" value="Register"> -->
 	</form>

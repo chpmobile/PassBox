@@ -16,11 +16,14 @@ var localData;
 var localdata;
 var a;
 var userpass;
+var del;
 
 $('#delete').click(function(){
 
-	var del = document.getElementById("bname").value;
-	document.getElementById(del).remove();
+	 del = document.getElementById("bname").value;
+	 console.log(del);
+	//document.getElementById(del).remove();
+
 
 })
 
@@ -106,29 +109,33 @@ if(data)
 	console.log("pass");
 	for(var i=0; i<=id-1; i++ ) {
 
+
 		var localData = JSON.parse(window.localStorage.getItem(i));
 
-		//console.log(localData.name);
-		console.log(i + "     " + localData);
-	 // $('#addfields').html(exampleJSON[i]);
-	 	var n=localData.name;
-	 	//console.log(n);
-	 	var button = setfield(n);
+		if(localData.name !== del)
+		{
+			//console.log(localData.name);
+			console.log(i + "     " + localData);
+		 // $('#addfields').html(exampleJSON[i]);
+		 	var n=localData.name;
+		 	//console.log(n);
+		 	var button = setfield(n);
 
-		$('#addfields').append(button);
-		$(button).click(function(){
+			$('#addfields').append(button);
+			$(button).click(function(){
 
-			//console.log("phase2");
-			window.location.assign("#page4");
+				//console.log("phase2");
+				window.location.assign("#page4");
 
-			document.getElementById("bname").value = localData.name;
-			document.getElementById("busername").value = localData.username;
-			document.getElementById("bemail").value = localData.email;
-			document.getElementById("bpassword").value = localData.password;
-			document.getElementById("burl").value = localData.url;
-			//console.log("phase3");
+				document.getElementById("bname").value = localData.name;
+				document.getElementById("busername").value = localData.username;
+				document.getElementById("bemail").value = localData.email;
+				document.getElementById("bpassword").value = localData.password;
+				document.getElementById("burl").value = localData.url;
+				//console.log("phase3");
 
-		})
+			})
+		}
 
 	}
 }
