@@ -114,8 +114,8 @@ if(data)
 
 		var localData = JSON.parse(window.localStorage.getItem(i));
 
-		if(localData.name !== del)
-		{
+		// if(localData.name !== del)
+		// {
 			//console.log(localData.name);
 			console.log(i + "     " + localData);
 		 // $('#addfields').html(exampleJSON[i]);
@@ -125,7 +125,12 @@ if(data)
 
 			$('#addfields').append(button);
 			$(button).click(function(){
+			// 	for(var i=0; i<=id-1; i++ ) {
 
+
+				var localData = JSON.parse(window.localStorage.getItem(i));
+
+				
 				//console.log("phase2");
 				window.location.assign("#page4");
 
@@ -135,9 +140,10 @@ if(data)
 				document.getElementById("bpassword").value = localData.password;
 				document.getElementById("burl").value = localData.url;
 				//console.log("phase3");
+			// }
 
 			})
-		}
+		
 
 	}
 }
