@@ -1,9 +1,11 @@
+var id;
+
 $(document).ready(function() {
 
 var bol = false;
 var len = 7;
 var exampleJSON;
-var id;
+
 var name;
 var username;
 var email;
@@ -108,7 +110,7 @@ console.log(data);
 if(data) 
 {
 	
-	console.log("pass");
+	console.log("pass2");
 	for(var i=0; i<=id-1; i++ ) {
 
 
@@ -124,29 +126,85 @@ if(data)
 		 	var button = setfield(n);
 
 			$('#addfields').append(button);
-			$(button).click(function(){
-			// 	for(var i=0; i<=id-1; i++ ) {
 
-
-				var localData = JSON.parse(window.localStorage.getItem(i));
-
-				
-				//console.log("phase2");
-				window.location.assign("#page4");
-
-				document.getElementById("bname").value = localData.name;
-				document.getElementById("busername").value = localData.username;
-				document.getElementById("bemail").value = localData.email;
-				document.getElementById("bpassword").value = localData.password;
-				document.getElementById("burl").value = localData.url;
-				//console.log("phase3");
-			// }
-
-			})
-		
+		}
 
 	}
-}
+
+			// var buttons = document.getElementsByTagName("button");
+			// var bt = document.getElementsByClassName('newfield');
+			// // var buttonsCount = buttons.length;
+			// // for (var i = 0; i <= buttonsCount; i += 1) {
+			// //     buttons[i].onclick = function(e) {
+			// //         alert(this.id);
+			// //     }
+			// // }​
+
+
+
+			// for (var i = 0; i < buttons.length; i++){
+   //  			bt[i].onclick = function(){ console.log(this.id) };
+			// }
+
+			$('.newfield').click(function() {
+ 				 console.log($(this).attr('id'));
+ 				 var b = $(this).attr('id');
+ 				 console.log(b);
+
+ 				 for(var i=0; i<=id-1; i++ ){
+
+
+					var localData = JSON.parse(window.localStorage.getItem(i));
+
+						if (localData.name == b)
+						{
+							console.log("phase2");
+							window.location.assign("#page4");
+
+							document.getElementById("bname").value = localData.name;
+							document.getElementById("busername").value = localData.username;
+							document.getElementById("bemail").value = localData.email;
+							document.getElementById("bpassword").value = localData.password;
+							document.getElementById("burl").value = localData.url;
+							//console.log("phase3");
+						}
+				}
+
+			});
+
+
+			// $('button').click(function() {
+			//     console.log ($(this).attr('id'));
+			// });
+
+
+			// var check = $('button').val()
+			// console.log(check);
+			// $(n).click(function(){
+				
+		
+						
+
+			// 			var localData = JSON.parse(window.localStorage.getItem(i));
+
+						
+			// 			//console.log("phase2");
+			// 			window.location.assign("#page4");
+
+			// 			document.getElementById("bname").value = localData.name;
+			// 			document.getElementById("busername").value = localData.username;
+			// 			document.getElementById("bemail").value = localData.email;
+			// 			document.getElementById("bpassword").value = localData.password;
+			// 			document.getElementById("burl").value = localData.url;
+			// 			//console.log("phase3");
+				
+
+
+			// })
+		
+
+	
+
 
 
 
@@ -302,21 +360,30 @@ console.log(localData);
 		//console.log(color);
 
 }
+	
+
+		$('.newfield').click(function() {
+ 				 console.log($(this).attr('id'));
+ 				 var b = $(this).attr('id');
+ 				 console.log(b);
 
 
-		$(button).click(function(){
+						if (name == b)
+						{
+							console.log("phase3");
+							window.location.assign("#page4");
 
-			//console.log("phase2");
-			window.location.assign("#page4");
+							document.getElementById("bname").value = name;
+							document.getElementById("busername").value = username;
+							document.getElementById("bemail").value = email;
+							document.getElementById("bpassword").value = password;
+							document.getElementById("burl").value = url;
+							//console.log("phase3");
+						}
+				
 
-			document.getElementById("bname").innerHTML = name;
-			document.getElementById("busername").innerHTML = username;
-			document.getElementById("bemail").innerHTML = email;
-			document.getElementById("bpassword").innerHTML = password;
-			document.getElementById("burl").innerHTML = url;
-			//console.log("phase3");
+			});
 
-		})
 
 		
 		$('#header1').css('background',color);
@@ -369,6 +436,7 @@ function setfield(n){
 			name:  n,
 			class: "newfield",
 			value: n
+			
 		
 
 
@@ -382,6 +450,10 @@ function setfield(n){
 		//$('#addfields').append('<input type="button" name="addbutton" id="addbutton" value="addbutton">');	
 
 }
+
+
+
+
 
 
 function generatePass(plength){
