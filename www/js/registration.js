@@ -24,6 +24,8 @@ $('#delete').click(function(){
 	 console.log(del);
 	//document.getElementById(del).remove();
 
+//https://www.google.co.uk/search?q=value+innerHTML+empty+when+get+from+local+storage&ie=utf-8&oe=utf-8&gws_rd=cr&ei=M-snV4mSFYG9gAaS0r3QBg
+//http://ariya.ofilabs.com/2013/07/sequences-using-javascript-array.html
 
 })
 
