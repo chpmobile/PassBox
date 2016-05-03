@@ -73,8 +73,8 @@ function createNotification() {
     //
 	window.plugin.notification.local.add({ 
     	id: 		1,
-        title: 		"Hey you",
-        message: 	"Go back to work",
+        title: 		"PassBox: Change your password",
+        message: 	"You can use the password generator",
         date: 		notificationTime, 
         badge: 		notification_count++
    	});

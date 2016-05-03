@@ -81,3 +81,9 @@ background: linear-gradient(#36caf0 5%, #22abe9 100%);
 	opacity: 0;
 
 }
+
+.switch-wrapper {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+}
