@@ -2,18 +2,19 @@ var notification_count=0;
 
 $(document).on('pageinit', function() {
 
-	$('#messageButton').on('click', function() {
-		createMessage();
-	});
+	// $('#messageButton').on('click', function() {
+	// 	createMessage();
+	// });
     
 
 
-	$('#dialogButton').on('click', function() {
-		createDialog();
-	});
+	// $('#dialogButton').on('click', function() {
+	// 	createDialog();
+	// });
 
    
-
+	//Notify the user didn'tknow how to make the notification every 3 months
+	// for that i left it to custom 3 seconds to show that it works 
 	$('#notificationButton').on('click', function() {
 		createNotification();
 	});
@@ -22,6 +23,12 @@ $(document).on('pageinit', function() {
 });
 
 
+//Different messages that will pop up to user
+function changepass(){		
+	//phoneGap and jQueryMobile do not support toast messages directly
+    //so we can add this using toast.js
+    new Toast({content: 'You succesfuly change your password', duration: 2000}); 	
+}
 function successfield(n){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js

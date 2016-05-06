@@ -61,10 +61,11 @@
 
 <div data-role="page" id="forget" data-theme="a">
     <div data-role="header" data-theme="a">
+    <a href="#pageone" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
       <h1>Forget Password</h1>
     </div>
 
-    <div data-role="page" class="ui-content" data-theme="a">
+    <div data-role="content" class="ui-content" data-theme="a">
       <p style="text-align: center">Give the safe word</p>
       <input type="text" id="safeword" />
      <button id="checkword">Submit</button>    
@@ -76,13 +77,13 @@
       <h1>Reset Password</h1>
     </div>
 
-    <div data-role="page" class="ui-content" data-theme="a">
+    <div data-role="content" class="ui-content" data-theme="a">
 
       <p style="text-align: center">Enter Password</p>
-      <input type="text" id="reset_password" />
+      <input type="password" id="reset_password" />
 
       <p style="text-align: center">Config Password</p>
-      <input type="text" id="conf_password" />
+      <input type="password" id="conf_password" />
 
      <button id="resetpass">Submit</button>
      
@@ -91,10 +92,11 @@
 
   <div data-role="page" id="swordpage" data-theme="a">
     <div data-role="header" data-theme="a">
+    <a href="#page" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
       <h1>Safe Word</h1>
     </div>
 
-    <div data-role="page" class="ui-content" data-theme="a">
+    <div data-role="content" class="ui-content" data-theme="a">
       <p style="text-align: center">Choose a safe word</p>
       <input type="text" id="sellectsafeword" />
      <button id="sellectword">Submit</button>    
@@ -129,9 +131,10 @@
     	<nav class="nav-hide">
   			<ul>
     			<li><h1>PassBox</h1></li>
-    			<li><a href="#">Password</a></li>
+    			<li><a href="#page2">AddnewField</a></li>
+    			<li><a href="#resetpassword">Password</a></li>
 			    <li><a href="#swordpage">SafeWord</a></li>
-    			<li><a href="#">About</a></li>
+    			<li><a href="#about">About</a></li>
   			</ul>
 		</nav>
 
@@ -224,10 +227,11 @@
     
     	<nav class="nav-hide">
   			<ul>
-    			<li><h1>PassBox</h1></li>
-    			<li><a href="#">Password</a></li>
-			    <li><a href="#">Contact</a></li>
-    			<li><a href="#">About</a></li>
+    		<li><h1>PassBox</h1></li>
+    			<li><a href="#page2">AddnewField</a></li>
+    			<li><a href="#resetpassword">Password</a></li>
+			    <li><a href="#swordpage">SafeWord</a></li>
+    			<li><a href="#about">About</a></li>
   			</ul>
 		</nav>
 
@@ -312,7 +316,7 @@
 <!--- Page 3 start here -->
 
 
-<div data-role="page" id ="page3" data-theme="a">
+<div data-role="page" id ="about" data-theme="a">
 	 
 	<!--- Header Start here -->
 	
@@ -335,9 +339,10 @@
     	<nav class="nav-hide">
   			<ul>
     			<li><h1>PassBox</h1></li>
-    			<li><a href="#">Password</a></li>
-			    <li><a href="#">Contact</a></li>
-    			<li><a href="#">About</a></li>
+    			<li><a href="#page2">AddnewField</a></li>
+    			<li><a href="#resetpassword">Password</a></li>
+			    <li><a href="#swordpage">SafeWord</a></li>
+    			<li><a href="#about">About</a></li>
   			</ul>
 		</nav>
 
@@ -345,42 +350,15 @@
 		<!-- back button -->
 		<a href="#page" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-notext">Back Icon</a>
 
-		<!-- <div class="round-button"></div> -->
-	
-
-		 <div class="color">
-
-		 	<input type="checkbox" name="changecolor" id="changecolor"> 
-	
-		    <ul>
-		      <div class="white"></div>
-		      <div class="red"></div>
-		      <div class="green"></div>
-		      <div class="yellow"></div>
-		      <div class="blue"></div>
-		      
-		    </ul>
-		 </div>
-
-				
+						
 	</div><!--- Header ends here -->	
 
-
-		<div data-role="main" class="ui-content" data-theme="a">
-
-		<div data-role="content" class="ui-content">
+	<div data-role="content" class="ui-content" data-theme="a">
 
 		
-			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
-
 			
-
-			
-		
-			
-		</div>
 	</div>
-	</div><!--- Page 3 end here -->
+</div><!--- Page about end here -->
 
 
 <!--- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -404,10 +382,11 @@
     
     	<nav class="nav-hide">
   			<ul>
-    			<li><h1>PassBox</h1></li>
-    			<li><a href="#">Password</a></li>
-			    <li><a href="#">Contact</a></li>
-    			<li><a href="#">About</a></li>
+    		<li><h1>PassBox</h1></li>
+    			<li><a href="#page2">AddnewField</a></li>
+    			<li><a href="#resetpassword">Password</a></li>
+			    <li><a href="#swordpage">SafeWord</a></li>
+    			<li><a href="#about">About</a></li>
   			</ul>
 		</nav>
 

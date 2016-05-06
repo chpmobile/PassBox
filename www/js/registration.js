@@ -2,6 +2,7 @@ var id;
 
 $(document).ready(function() {
 
+//Variables
 var bol = false;
 var len = 7;
 var exampleJSON;
@@ -21,19 +22,8 @@ var userpass;
 var del;
 var sword;
 
-$('#delete').click(function(){
 
-	 del = document.getElementById("bname").value;
-	 console.log(del);
-
- window.location.assign("#page");
-	 $(del).hide();
-	
-
-//https://www.google.co.uk/search?q=value+innerHTML+empty+when+get+from+local+storage&ie=utf-8&oe=utf-8&gws_rd=cr&ei=M-snV4mSFYG9gAaS0r3QBg
-//http://ariya.ofilabs.com/2013/07/sequences-using-javascript-array.html
-
-})
+// Check if there user give the correct safe word
 
 $('#checkword').click(function(){
 
@@ -48,11 +38,14 @@ if(sword ==''){
 
 else{
 
+	//Check if there is a safe word
+
  	a = window.localStorage.getItem("safeword");
 	if (a)a=0;
 
 	if (a==0){
 
+		a = window.localStorage.getItem("safeword");
 		console.log(a);
 		console.log(sword);
 		
@@ -61,6 +54,7 @@ else{
 
 	   	console.log("you can change the password");
 		window.location.assign("#resetpassword");
+		$('#safeword').val('');
 
 		}
 
@@ -86,7 +80,7 @@ else{
 
 })
 
-
+//Register the safe word and store it to local storage
 $('#sellectword').click(function(){
 
 		
@@ -99,7 +93,7 @@ $('#sellectword').click(function(){
 		
 })
 
-
+//Check if the user give the correct password
 
 $('#regpass').click(function(){
 
@@ -118,7 +112,8 @@ else{
 
  a = window.localStorage.getItem("user");
 	
-
+//This fuction will run only the first time user lunch the application
+//and it will store the users password
 if (a)a=0;
 
 if (a!==0)
@@ -145,6 +140,7 @@ if (a!==0)
 
    	console.log("PASS");
 	window.location.assign("#page");
+	$('#user_password').val('');
 
 }else{
 
@@ -155,46 +151,106 @@ if (a!==0)
 }
 })
 
+//Users reset password
+$('#resetpass').click(function(){
 
- //var localData = JSON.parse(window.localStorage.getItem(id));
+	var pass1 = $('#reset_password').val();
+	var pass2 = $('#conf_password').val();
+
+
+
+	if (pass1 == pass2) {
+
+		window.localStorage.setItem("user", pass1);
+		window.location.assign("#page");
+		changepass();
+		$('#reset_password').val('');
+	    $('#conf_password').val('');
+
+
+	}
+
+	else{
+
+		alert("Your passwords don't match. Try again?");
+
+	}
+
+})
+
+
+
 
 //window.localStorage.clear();
 
+// check if there are existing fields in the local storage
+
+//Take the latest id from the local storage 
 id = window.localStorage.getItem("autoid");
 if(!id) id =0;
 
 console.log(id);
   
-localdata = JSON.parse(window.localStorage.getItem(id-1));
-console.log(localdata);
+// localdata = JSON.parse(window.localStorage.getItem(id-1));
+// console.log(localdata);
 
-if(localdata) data =true;
-//data = Object.keys(localdata).length;
+//if the id is >0 thats mean that there are fields store in local storage
+if(id>0) data =true;
+
 console.log(data);
+
+
+//Delete a field
+//Is not working
+
+$('#delete').click(function(){
+
+	 del = document.getElementById("bname").value;
+	 console.log(del);
+
+ 
+	 //check the local storage and delete the json field
+	 for(var i=0; i<=id-1; i++ ) {
+
+		var localData = JSON.parse(window.localStorage.getItem(i));
+		if (del == localData.name ){
+			window.localStorage.removeItem("i");
+		}
+
+	}
+
+	window.location.assign("#page");
+	$(del).remove();
+
+
+})
+
+
+
 
 
 //printing
 
-if(data) 
-{
-	
+if(data) {
+
 	console.log("pass2");
 	for(var i=0; i<=id-1; i++ ) {
 
 
 		var localData = JSON.parse(window.localStorage.getItem(i));
 
-		// if(localData.name !== del)
-		// {
-			//console.log(localData.name);
+		//Check if there is an empty field on the local storege, if yes skip it.
+		if (localData){
+	
 			console.log(i + "     " + localData);
-		 // $('#addfields').html(exampleJSON[i]);
+		
 		 	var n=localData.name;
 		 	//console.log(n);
 		 	var button = setfield(n);
 
 			$('#addfields').append(button);
 
+			}
 		}
 
 	}
@@ -214,6 +270,8 @@ if(data)
    //  			bt[i].onclick = function(){ console.log(this.id) };
 			// }
 
+
+			// Creating the buttons using the data from the local storage
 			$('.newfield').click(function() {
  				 console.log($(this).attr('id'));
  				 var b = $(this).attr('id');
@@ -271,10 +329,6 @@ if(data)
 			// })
 		
 
-	
-
-
-
 
 choosecolour();
 
@@ -285,6 +339,7 @@ $('#round-button').click(function(){
 
 })
 
+//change the headers' color
 	$('#changecolor').click(function(){
 
 	  if ($(this).prop('checked'))
@@ -306,7 +361,7 @@ $('#round-button').click(function(){
 
 	})
 
-
+//User Register
 $("#register").click(function() {
 	
  name = $("#name").val();
@@ -329,10 +384,10 @@ if (name == '' || username =='' || email == '' || password == '') {
 
 
 
-//Take the latest id from the lacal storage 
-//Convert id from string to integer
 
-// id = parseInt(window.localStorage.getItem(id));
+
+
+
 
 
 
@@ -361,11 +416,10 @@ id++;
 
 window.localStorage.setItem("autoid",id);
 
+	//Use of json.push ///Didn't work\\\\
+//-----------------------------------------
+
 // exampleJSON.push({"name":name, "username":username, "email":email, "password":cpassword, "url":url});
-
-
-
-
 
 // var storage = array[];
 
@@ -377,11 +431,6 @@ window.localStorage.setItem("autoid",id);
 // 	);
 
 //console.log(exampleJSON);
-
-
-
-
-
 
 //Take the length og the local storage table
 //var test = window.localStorage.length;
@@ -417,6 +466,7 @@ console.log(localData);
 	 $("#url").val('');
 	 //console.log(name);
 	
+
 	var color = $('.header').css('background-color');
 		//console.log(color);
 
@@ -453,7 +503,7 @@ console.log(localData);
 
 
 });
-
+	//Genarate a password
 	$('#generator').click(function(){
 
 		var pg = generatePass(len);
@@ -462,7 +512,7 @@ console.log(localData);
 
 	})
 
-
+	//Hide and View the password
 	$('#eye').click(function(){
 
 
@@ -484,6 +534,7 @@ console.log(localData);
 
 });
 
+//Set field attitudes
 function setfield(n){
 
 
@@ -518,7 +569,7 @@ function setfield(n){
 
 
 
-
+//Function to create a strong complex password
 function generatePass(plength){
 
     var keylistalpha="abcdefghijklmnopqrstuvwxyz";
