@@ -22,14 +22,29 @@ $(document).on('pageinit', function() {
 });
 
 
-
+function successfield(n){		
+	//phoneGap and jQueryMobile do not support toast messages directly
+    //so we can add this using toast.js
+    new Toast({content: 'You succesfuly cretaed  ' + n + '  field', duration: 2000}); 	
+}
+   
 function createMessage(){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
     new Toast({content: 'Fill all the field please', duration: 2000}); 	
 }
    
-     
+ function correctpass(){		
+	//phoneGap and jQueryMobile do not support toast messages directly
+    //so we can add this using toast.js
+    new Toast({content: 'Please give the correct password', duration: 2000}); 	
+}   
+
+function correctword(){		
+	//phoneGap and jQueryMobile do not support toast messages directly
+    //so we can add this using toast.js
+    new Toast({content: 'Please give the correct safe word', duration: 2000}); 	
+}    
 
 function createDialog() {
 

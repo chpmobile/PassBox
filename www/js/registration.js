@@ -19,6 +19,7 @@ var localdata;
 var a;
 var userpass;
 var del;
+var sword;
 
 $('#delete').click(function(){
 
@@ -34,6 +35,69 @@ $('#delete').click(function(){
 
 })
 
+$('#checkword').click(function(){
+
+sword = $('#safeword').val();
+if(sword ==''){
+
+	console.log("give word");
+	alert("Pleas give the safe Word");
+	
+
+}
+
+else{
+
+ 	a = window.localStorage.getItem("safeword");
+	if (a)a=0;
+
+	if (a==0){
+
+		console.log(a);
+		console.log(sword);
+		
+
+	   if (a==sword){
+
+	   	console.log("you can change the password");
+		window.location.assign("#resetpassword");
+
+		}
+
+		else{
+
+			alert("Wrong safe word");
+			correctword();
+
+		}
+	}
+
+
+	else{
+
+			alert("You don't have a safe word");
+			
+
+		}
+
+	
+	}
+
+
+})
+
+
+$('#sellectword').click(function(){
+
+		
+		
+			var word = $('#sellectsafeword').val();
+
+			window.localStorage.setItem("safeword", word);    
+		    window.location.assign("#page");
+
+		
+})
 
 
 
@@ -44,7 +108,8 @@ userpass = $('#user_password').val();
 if(userpass ==''){
 
 	console.log("give pass");
-	alert("give pass");
+	alert("Wrong Password");
+	correctpass();
 
 }
 
@@ -260,14 +325,6 @@ if (name == '' || username =='' || email == '' || password == '') {
 	alert("Please fill all fields...!!!!!!");
 	createMessage();
 
-} else if ((password.length) < length) {
-
-	alert("Password should atleast 8 character in length...!!!!!!");
-
-// } else if (!(password).match(cpassword)) {
-
-// 	alert("Your passwords don't match. Try again?");
-
 } else {
 
 
@@ -339,6 +396,7 @@ console.log(localData);
 
 	//take it to main page
 	window.location.assign("#page");
+	successfield(name);
 
 	//calling the function
 	var button = setfield(name);

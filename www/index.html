@@ -54,8 +54,56 @@
       <p style="text-align: center">Enter Password</p>
       <input type="password" id="user_password" />
      <button id="regpass">Submit</button>
+     <a href="#forget">Forget password</a>
     </div>
   </div>
+
+
+<div data-role="page" id="forget" data-theme="a">
+    <div data-role="header" data-theme="a">
+      <h1>Forget Password</h1>
+    </div>
+
+    <div data-role="page" class="ui-content" data-theme="a">
+      <p style="text-align: center">Give the safe word</p>
+      <input type="text" id="safeword" />
+     <button id="checkword">Submit</button>    
+    </div>
+  </div>
+
+  <div data-role="page" id="resetpassword" data-theme="a">
+    <div data-role="header" data-theme="a">
+      <h1>Reset Password</h1>
+    </div>
+
+    <div data-role="page" class="ui-content" data-theme="a">
+
+      <p style="text-align: center">Enter Password</p>
+      <input type="text" id="reset_password" />
+
+      <p style="text-align: center">Config Password</p>
+      <input type="text" id="conf_password" />
+
+     <button id="resetpass">Submit</button>
+     
+    </div>
+  </div>
+
+  <div data-role="page" id="swordpage" data-theme="a">
+    <div data-role="header" data-theme="a">
+      <h1>Safe Word</h1>
+    </div>
+
+    <div data-role="page" class="ui-content" data-theme="a">
+      <p style="text-align: center">Choose a safe word</p>
+      <input type="text" id="sellectsafeword" />
+     <button id="sellectword">Submit</button>    
+    </div>
+  </div>
+
+
+
+
 
 <!--- Header start here -->
 	 
@@ -82,7 +130,7 @@
   			<ul>
     			<li><h1>PassBox</h1></li>
     			<li><a href="#">Password</a></li>
-			    <li><a href="#">Contact</a></li>
+			    <li><a href="#swordpage">SafeWord</a></li>
     			<li><a href="#">About</a></li>
   			</ul>
 		</nav>
